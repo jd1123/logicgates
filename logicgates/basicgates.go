@@ -12,13 +12,9 @@ func Not(a bool) bool {
 
 // Not follows from being built with Nand
 func And(a, b bool) bool {
-	return Not(Nand(a, b))
+	return Nand(Nand(a, b), Nand(a, b))
 }
 
 func Or(a, b bool) bool {
 	return Nand(Nand(a, a), Nand(b, b))
-}
-
-func Xor(a, b bool) bool {
-	return Or(And(a, Not(b)), And(b, Not(a)))
 }

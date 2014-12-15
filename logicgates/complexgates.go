@@ -1,5 +1,8 @@
 package logicgates
 
+func Xor(a, b bool) bool {
+	return Or(And(a, Not(b)), And(b, Not(a)))
+}
 func And3(a, b, c bool) bool {
 	return And(a, And(b, c))
 }
